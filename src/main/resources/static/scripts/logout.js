@@ -11,13 +11,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 $(document).ready(function() {
-//   var user = firebase.auth().currentUser;
-
-//   if (user) {
-//     // User is signed in.
-//   } else {
-//     firebase.auth().signOut();
-//   }
   $("#logoutBtn").click(function() {
     firebase.auth().signOut();
   });

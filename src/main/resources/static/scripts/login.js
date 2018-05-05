@@ -38,13 +38,6 @@ function login(user) {
     });
 }
 $(document).ready(function() {
-//   var user = firebase.auth().currentUser;
-
-//   if (user) {
-//     login(user);
-//   } else {
-//     // User is signed out.
-//   }
   $("#loginBtn").click(function() {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope(config.scopes.join(" "));
