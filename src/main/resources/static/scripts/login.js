@@ -1,10 +1,3 @@
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    login(user);
-  } else {
-    // User is signed out.
-  }
-});
 
 function login(user) {
   firebase
@@ -53,10 +46,7 @@ $(document).ready(function() {
         login(user);
       })
       .catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
+        console.log(error);
       });
   });
 });
