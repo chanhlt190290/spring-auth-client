@@ -1,7 +1,5 @@
 package com.chanhlt.springsecurity;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 
 import com.google.auth.oauth2.GoogleCredentials;
