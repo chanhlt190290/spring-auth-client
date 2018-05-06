@@ -23,6 +23,10 @@ repositories {
 	mavenCentral()
 }
 
+bootJar{
+	baseName = 'spring-auth-client'
+}
+
 bootRun{
 	sourceResources sourceSets.main
 }

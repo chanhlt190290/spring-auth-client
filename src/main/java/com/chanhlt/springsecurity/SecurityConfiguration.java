@@ -48,6 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             @Override
             public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                     Authentication authentication) throws IOException, ServletException {
+                        request.getSession().setAttribute("isLoggedIn", true);
                 response.sendRedirect("/");
             }
         };
@@ -63,14 +64,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeRequests()
-                .antMatchers("/login*").anonymous()
+                .antMatchers("/login*").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
                 .loginPage("/login").permitAll()
                 .successHandler(authenticationSuccessHandler())
                 .and()
-            .logout().permitAll().logoutSuccessUrl("/login");
+            .logout().permitAll().logoutSuccessUrl("/login?logout=true");
     }
 
     @Override

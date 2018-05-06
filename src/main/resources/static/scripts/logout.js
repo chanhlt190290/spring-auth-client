@@ -10,6 +10,7 @@ function logout() {
 
 $(document).ready(function() {
   $("#logoutBtn").click(function() {
-    firebase.auth().signOut();
+    // firebase.auth().signOut();
+    logout();
   });
 });
